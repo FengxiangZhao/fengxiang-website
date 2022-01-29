@@ -10,8 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: >-
-          npm install hexo-renderer-pug hexo-renderer-stylus --save; hexo
-          generate;
+          npm install hexo-cli -g; npm install hexo-renderer-pug hexo-renderer-stylus --save; hexo generate;
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
